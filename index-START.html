@@ -47,21 +47,20 @@
 
     const result = inventors.filter( inventor => inventor.passed >= 1900)
     console.table(result);
-    
-
-    
-    
+  
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
 
-    const last_names = []
+    const lastNames = []
     inventors.map(inventor => {
-      last_names.push(`${inventor.first} ${inventor.last}`)
+      lastNames.push(`${inventor.first} ${inventor.last}`)
     })
+    console.log(lastNames)
 
-    console.log(last_names)
-
+    // Wes's solution
+    const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
+    console.log(fullNames)
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
