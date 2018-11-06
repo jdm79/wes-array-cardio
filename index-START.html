@@ -35,7 +35,7 @@
     // my solution
     const funfzehn = inventors.filter( inventor => inventor.year < 1600 && inventor.year > 1500)
     funfzehn.forEach(inventor => {
-      console.log(`${inventor.first} ${inventor.last}`)
+      // console.log(`${inventor.first} ${inventor.last}`);
     })
     // Wes's solution
     const fifteen = inventors.filter(function(inventor) {
@@ -43,11 +43,10 @@
         return true;
       }
     })
-
-    console.table(fifteen)
+    // console.table(fifteen)
 
     const neunzehn = inventors.filter( inventor => inventor.passed >= 1900)
-    console.table(neunzehn);
+    // console.table(neunzehn);
   
 
     // Array.prototype.map()
@@ -58,43 +57,43 @@
     inventors.map(inventor => {
       lastNames.push(`${inventor.first} ${inventor.last}`);
     })
-    console.log(lastNames);
+    // console.log(lastNames);
 
     // Wes's solution
     const fullNames = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
-    console.log(fullNames);
+    // console.log(fullNames);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 
     // my solution
     const oldest = inventors.sort( (a, b) => a.year - b.year);
-    console.table(oldest);
+    // console.table(oldest);
 
     // Wes's solution
     const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
-    console.table(ordered)
+    // console.table(ordered);
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
 
     // my solution
     const ages = [];
     inventors.forEach( (inventor) => {
-      let age = inventor.passed - inventor.year
-      ages.push(age)
+      let age = inventor.passed - inventor.year;
+      ages.push(age);
     })
 
     function getSum(total, num) {
     return total + num;
     }
-    console.log(`The combined ages of the inventors is: ${ages.reduce(getSum)}`)
+    // console.log(`The combined ages of the inventors is: ${ages.reduce(getSum)}`)
 
     // Wes's solution
     const totalYears = inventors.reduce((total, inventor) => {
-      return total + (inventor.passed - inventor.year)
+      return total + (inventor.passed - inventor.year);
     }, 0)
 
-    console.log(totalYears)
+    // console.log(totalYears)
 
     // 5. Sort the inventors by years lived
 
@@ -103,8 +102,16 @@
     inventors.forEach((inventor) => {
       oldestToYoungest.push(inventor.passed - inventor.year);
     })
-
     console.log(oldestToYoungest.sort().reverse());
+
+    // Wes's solution
+    const oldestWes = inventors.sort( (a, b) => {
+      const lastGuy = a.passed - a.year;
+      const nextGuy = b.passed - b.year;
+      return lastGuy > nextGuy ? -1 : 1;
+    })
+    console.table(oldestWes)
+
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
