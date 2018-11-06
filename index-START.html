@@ -126,11 +126,29 @@
 
     // my solution
     const alphaOrder = people.sort()
-    console.table(alphaOrder)
-    
+    // console.table(alphaOrder)
+
+    // wes solution
+    const alpha = people.sort( (lastOne, nextOne) => {
+      const [aLast, aFirst] = lastOne.split(', ')
+      const [bLast, bFirst] = nextOne.split(', ')
+      return aLast > bLast ? 1 : 1;      
+    })
+    // console.log(alpha);
+
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 
+    'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    
+    // my solution
+    const tally = data.reduce((total, instance) => {
+      return instance
+    },0)
+    // console.log(tally);
+    
+
+
 
   </script>
 </body>
