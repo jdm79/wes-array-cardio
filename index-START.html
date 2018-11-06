@@ -138,14 +138,19 @@
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
+
+    // Wes's solution
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 
     'bike', 'walk', 'car', 'van', 'car', 'truck' ];
     
-    // my solution
-    const tally = data.reduce((total, instance) => {
-      return instance
-    },0)
-    // console.log(tally);
+    const transport = data.reduce( (obj, item) => {
+      if(!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {})
+    console.log(transport)
     
 
 
