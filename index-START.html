@@ -189,8 +189,7 @@
     // refactorage goes to 11
     const checkSome = peopleTwo.some( person => (new Date()).getFullYear() - person.year >= 19);
     
-
-    console.log({checkSome})
+    // console.log({checkSome})
 
     // using curly brackets will show the name of the value and its boolean status
     // console.log({checkSome})    
@@ -198,14 +197,16 @@
 
     
     // Array.prototype.every() // is everyone 19 or older?
-    const checkEvery = peopleTwo.every((person) => {
-      const currentYear = (new Date()).getFullYear()
-        if(currentYear - person.year >= 1){
-          return true
-        } 
-      })
+    // const checkEvery = peopleTwo.every((person) => {
+    //   const currentYear = (new Date()).getFullYear()
+    //   if(currentYear - person.year >= 1){
+    //     return true
+    //   } 
+    // })
 
-    // console.log({checkEvery})
+    const checkEvery = peopleTwo.every( person => (new Date()).getFullYear() - person.year >= 14);
+
+    console.log({checkEvery})
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
