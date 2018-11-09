@@ -206,12 +206,18 @@
 
     const checkEvery = peopleTwo.every( person => (new Date()).getFullYear() - person.year >= 14);
 
-    console.log({checkEvery})
+    // console.log({checkEvery})
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
 
+    const findId = comments.find((comment) => {
+      if(comment.id === 823423) {
+        console.log(`ID: ${comment.id}, Comment: ${comment.text}`);
+      }
+    })
+    
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
