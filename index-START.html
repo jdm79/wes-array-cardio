@@ -220,10 +220,17 @@
 
     const findId = comments.find( comment => comment.id === 823423 )
 
-    console.log(findId)
+    // console.log(findId)
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+
+    const delIndex = comments.findIndex( comment => comment.id === 823423 )
+    comments.splice(delIndex, 1)
+    console.table(comments)
+
+    console.log(delIndex);
+    
     
 
 
