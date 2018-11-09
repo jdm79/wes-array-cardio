@@ -175,11 +175,20 @@
     // my solution
     const checkSome = peopleTwo.some((person) => {
       const currentYear = (new Date()).getFullYear()
-        if(currentYear - person.year >= 19){
-          return true
-        } 
-      })
+      if(currentYear - person.year >= 19){
+        return true
+      } 
+    })
 
+    // refactored, using just boolean rather than conditionals
+    const checkSome2 = peopleTwo.some((person) => {
+      const currentYear = (new Date()).getFullYear()
+      return currentYear - person.year >= 19
+    })
+
+    console.log({checkSome2})
+
+    // using curly brackets will show the name of the value and its boolean status
     // console.log({checkSome})    
 
 
@@ -192,7 +201,7 @@
         } 
       })
 
-    console.log({checkEvery})
+    // console.log({checkEvery})
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
