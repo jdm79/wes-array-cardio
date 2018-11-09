@@ -150,11 +150,11 @@
       obj[item]++;
       return obj;
     }, {})
-    console.log(transport)
+    // console.log(transport)
 
       // ## Array Cardio Day 2
 
-    const people = [
+    const peopleTwo = [
       { name: 'Wes', year: 1988 },
       { name: 'Kait', year: 1986 },
       { name: 'Irv', year: 1970 },
@@ -171,6 +171,19 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+
+    // my solution
+    const checkSome = peopleTwo.some((person) => {
+      const currentYear = (new Date()).getFullYear()
+        if(currentYear - person.year >= 19){
+          return true
+        } 
+      })
+
+    console.log({checkSome})    
+
+
+    
     // Array.prototype.every() // is everyone 19 or older?
 
     // Array.prototype.find()
