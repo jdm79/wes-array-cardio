@@ -173,20 +173,24 @@
     // Array.prototype.some() // is at least one person 19 or older?
 
     // my solution
-    const checkSome = peopleTwo.some((person) => {
-      const currentYear = (new Date()).getFullYear()
-      if(currentYear - person.year >= 19){
-        return true
-      } 
-    })
+    // const checkSome = peopleTwo.some((person) => {
+    //   const currentYear = (new Date()).getFullYear()
+    //   if(currentYear - person.year >= 19){
+    //     return true
+    //   } 
+    // })
 
     // refactored, using just boolean rather than conditionals
-    const checkSome2 = peopleTwo.some((person) => {
-      const currentYear = (new Date()).getFullYear()
-      return currentYear - person.year >= 19
-    })
+    // const checkSome = peopleTwo.some((person) => {
+    //   const currentYear = (new Date()).getFullYear()
+    //   return currentYear - person.year >= 19
+    // })
 
-    console.log({checkSome2})
+    // refactorage goes to 11
+    const checkSome = peopleTwo.some( person => (new Date()).getFullYear() - person.year >= 19);
+    
+
+    console.log({checkSome})
 
     // using curly brackets will show the name of the value and its boolean status
     // console.log({checkSome})    
